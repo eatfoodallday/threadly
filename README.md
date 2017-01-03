@@ -1,1 +1,1 @@
-welcome to my threadly project repo
+Threadly https://eatfoodallday.github.io/threadly/
