@@ -18,30 +18,33 @@ app = express(); //initialize express app
 app.set('port', (process.env.PORT || 8080));
 
 app.use('/', express.static(path.join(__dirname, 'app/')));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 
 //put the message onto the database
-app.post('/api', function(req, res) {
-    
+app.post('/commments', function(req, res) {
     //create new instance of comment
     var message = new Comment();
+    //get the message from the input field
+    var input = Object.keys(req.body);
     
     //set the comment info
-    message.comment = 'deleting comments';
+    message.comment = input[0];
     
     //save the comment to the data base
     message.save();
-    res.json({message: "received get request"});   
+    res.json({message: "received post request"});   
 });
 
 //grab database from the database
-app.get('/api', function(req, res){
+app.get('/comments', function(req, res){
    Comment.find(function(err, comments){
        res.json(comments);
    });
 });
 
 //delete comment from database
-app.delete('/api', function(req, res){
+app.delete('/comments', function(req, res){
    Comment.remove({},
    function(err, comment){
         res.json({message: "deleted"});
