@@ -1,0 +1,24 @@
+{
+  "name": "threadly",
+  "version": "1.0.0",
+  "description": "Threadly https://eatfoodallday.github.io/threadly/",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eatfoodallday/threadly.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eatfoodallday/threadly/issues"
+  },
+  "homepage": "https://github.com/eatfoodallday/threadly#readme",
+  "dependencies": {
+    "body-parser": "^1.16.1",
+    "express": "^4.14.1",
+    "path": "^0.12.7"
+  }
+}
