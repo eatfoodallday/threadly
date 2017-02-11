@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/eatfoodallday/threadly.git"
   },
-  "author": "",
+  "author": "Jordan Yen",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/eatfoodallday/threadly/issues"
@@ -19,6 +19,8 @@
   "dependencies": {
     "body-parser": "^1.16.1",
     "express": "^4.14.1",
+    "mongodb": "^2.2.22",
+    "mongoose": "^4.8.2",
     "path": "^0.12.7"
   }
 }
