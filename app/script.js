@@ -41,4 +41,3 @@ var main = function(){
     });
 }
 $(document).ready(main); //when doc is ready call main function above
-
