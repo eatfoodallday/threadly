@@ -24,14 +24,21 @@ var main = function(){
             dataType: 'json',
             data: comment,
             success : function() {
-                var html = $('<li>').text(comment); //when not empty, create new li and put comment into it
+                var html = $('<li>').text(comment).addClass("newComment"); //when not empty, create new li and put comment into it
                 html.prependTo('#comments'); //prepend to ul list
                 $input.val("");
             }
         });
-        
         return false;
     });
+    
+    $('#delete').click(function(){
+        $.ajax({
+            url:'/comments',
+            type: 'DELETE'
+        });
+        $('.newComment').remove();
+    });
 }
-
 $(document).ready(main); //when doc is ready call main function above
+
