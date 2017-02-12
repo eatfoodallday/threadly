@@ -17,18 +17,17 @@ var main = function(){
         var $input = $(event.target).find('input'); //stores input into this variable
         var comment = $input.val(); //puts into a comment
         
-        if(comment != ""){
-            var html = $('<li>').text(comment); //when not empty, create new li and put comment into it
-            html.prependTo('#comments'); //prepend to ul list
-            $input.val("");
-        }
-        
         //connect frontend to middlewear
         $.ajax({
             url: '/comments',
             type: 'POST',
             dataType: 'json',
-            data: comment 
+            data: comment,
+            success : function() {
+                var html = $('<li>').text(comment); //when not empty, create new li and put comment into it
+                html.prependTo('#comments'); //prepend to ul list
+                $input.val("");
+            }
         });
         
         return false;

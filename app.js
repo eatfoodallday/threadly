@@ -22,7 +22,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 //put the message onto the database
-app.post('/commments', function(req, res) {
+app.post('/comments', function(req, res) {
     //create new instance of comment
     var message = new Comment();
     //get the message from the input field
