@@ -7,11 +7,11 @@ var MongoDB = require('mongodb').Db;
 var Server = require('mongodb').Server;
 var ObjectID = require('mongodb').ObjectID;
 
-var dbHost = process.env.DB_HOST || 'localhost'
-var dbPort = process.env.DB_PORT || 27017;
-var dbName = process.env.DB_NAME || 'Threadly';
+//var dbHost = process.env.DB_HOST || 'localhost'
+//var dbPort = process.env.DB_PORT || 27017;
+//var dbName = process.env.DB_NAME || 'Threadly';
 
-mongoose.connect('mongodb://localhost:27017/comments');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/comments');
 
 app = express(); //initialize express app
 
